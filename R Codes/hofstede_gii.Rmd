@@ -1,0 +1,371 @@
+# Cultural Impact on Innovation: A Comparative Analysis of Developed and Developing Nations
+
+## Abstract
+
+This project aims to explore the impact of national culture on innovation by comparing developed and developing nations during the 2022 edition of the GII which tracks most recent global innovation trends against the background of an ongoing COVID-19 pandemic. Using Hofstede's 6D model of national culture, which includes dimensions such as power distance, individualism, masculinity, uncertainty avoidance, long-term orientation and indulgence, the study will investigate the relationship between cultural values and innovation as measured by the Global Innovation Index (GII). By examining the link between these cultural dimensions and the GII, the study will identify which dimensions are more or less related to a country's innovation performance. Additionally, the study will investigate whether the significance of cultural factors changes over time and whether the impact of culture on innovation is stronger in developed countries than in developing countries. The findings of this research will provide valuable insights into how cultural values can impact a nation's ability to innovate and inform policy decisions related to innovation.
+
+> *Hofstede's 6D model* [^hofstede_gii-1] is a framework that compares cultural values across different nations. It includes six dimensions: power distance, individualism vs collectivism, masculinity vs femininity, uncertainty avoidance, long-term orientation, and indulgence vs restraint.
+
+[^hofstede_gii-1]: *. Source: <https://geerthofstede.com>*
+
+> *The Global Innovation Index (GII)* [^hofstede_gii-2] is a measure of a country's innovation performance, it uses a combination of 81 indicators to measure a country's innovation ecosystem, including inputs, outputs and outcomes. It is widely used as a benchmarking tool to compare the innovation performance of countries and identifying strengths and weaknesses in a country's innovation ecosystem.
+
+[^hofstede_gii-2]: *. Source: <https://www.globalinnovationindex.org>*
+
+## Literature Review
+
+We intend to explore the links between national culture and innovation by examining the relationship between Hofstede's 6D model of national culture and the Global Innovation Index.
+
+## Define the research question
+
+What is the relationship between cultural values and innovation as measured by the Global Innovation Index (GII)?
+
+## Data Collection
+
+The data for this study was collected from original sources:
+
+1.  Geert Hofstede's website (<https://www.geert-hofstede.com/countries.html>)
+2.  World Intellectual Property Organization (WIPO) (<https://www.wipo.int/gii/en/>)
+
+A brief summary of each of the six dimensions of national culture as defined by Hofstede::
+
+| Dimension                   |                                             Value                                             |
+|----------------------|:------------------------------------------------:|
+| Power Distance (PDI)        |              The extent to which power and inequality are accepted in a society.              |
+| Individualism (IDV)         |                  The degree to which individuals are integrated into groups.                  |
+| Masculinity (MAS)           |           The degree to which traditional gender roles are reinforced in a society.           |
+| Uncertainty Avoidance (UAI) |         The extent to which a society is comfortable with uncertainty and ambiguity.          |
+| Long-term Orientation (LTO) |         The extent to which a society values long-term goals and traditional values.          |
+| Indulgence (IVR)            | The degree to which people in a society are allowed to indulge in their impulses and desires. |
+
+## Data Exploration
+
+```{r}
+#Load the required packages.
+library(tidyverse) #data manipulation
+library(ggplot2) #data visualization
+
+#Import the dataset.
+data <- read.csv("data.csv")
+
+# Check for missing values
+sum(is.na(data)) # 0 missing value
+
+#structure and summary of the dataset
+#str(data)
+summary(data)
+```
+
+```{r}
+
+# Select only Hofstede's cultural dimensions
+hofstede_dimensions <- data[,c("PDI", "IDV", "MAS", "UAI", "LTO", "IVR")]
+
+# Create boxplots
+boxplot(hofstede_dimensions)
+```
+
+**The scores for Hofstede's cultural dimensions are measured on a scale from 0 to 100. Each dimension is assessed on a scale from 0 to 100, with higher scores indicating a stronger presence of the characteristic being measured.**
+
+```{r}
+# Remove outliers
+```
+
+```{r}
+
+library(GGally)
+ggpairs(data[,c("PDI","IDV","MAS","UAI","LTO","IVR","GII_Score")],columns = c("PDI","IDV","MAS","UAI","LTO","IVR","GII_Score"),groupColumn = "Country")
+
+```
+
+#### Pearson's Correlation
+
+```{r}
+# calculate the correlation matrix
+cor_matrix <- cor(data[,c("PDI", "IDV", "MAS", "UAI", "LTO", "IVR","GII_Score")])
+
+# print the correlation matrix
+print(cor_matrix)
+```
+
+```{r}
+library(corrplot)
+corrplot(cor_matrix, method="color", type = "upper", tl.col = "black", tl.srt = 45, addCoef.col = "black")
+```
+
+**To describe the Pearson's correlation coefficients,**
+
+**excluding MAS, all the other variables of the HCD present correlations with the GII variables with statistical significance.**
+
+-   **PDI has a strong negative correlation with the GII variables,**
+
+-   **while IDV has a strong positive correlation with the GII variables.**
+
+-   **UAI shows a slight adverse-movement with the GII variables at a 1% significance level,**
+
+-   **while LTO and IVR show a slight co-movement with the GII variables at a 1% significance level.**
+
+```{r}
+
+library(ggplot2)
+
+# Create scatter plot PDI
+ggplot(data, aes(x=PDI, y=GII_Score)) + geom_point() + geom_smooth(method=lm) + ggtitle("Relationship between Power Distance and GII Score") + xlab("Power Distance") + ylab("GII Score") + theme_minimal()
+
+# Create scatter plot IDV
+ggplot(data, aes(x=IDV, y=GII_Score)) + geom_point() + geom_smooth(method=lm) + ggtitle("Relationship between Individualism and GII Score") + xlab("Individualism") + ylab("GII Score") + theme_minimal()
+
+# Create scatter plot LTO
+ggplot(data, aes(x=LTO, y=GII_Score)) + geom_point() + geom_smooth(method=lm) + ggtitle("Relationship between Long-term Orientation and GII Score") + xlab("Long-term Orientation") + ylab("GII Score") + theme_minimal()
+```
+
+#### VIF (Variance Inflation Factor)
+
+VIF (Variance Inflation Factor) is used to assess the degree of multicollinearity between predictor variables in a multiple regression model. A high VIF value (typically greater than 5) indicates that a predictor variable is highly correlated with one or more other predictor variables, and should be considered for removal from the model.
+
+```{r}
+library(car)
+
+# fit the model
+lm_model <- lm(GII_Score ~ PDI + IDV + MAS + UAI + LTO + IVR, data = data)
+
+# calculate VIF
+vif(lm_model)
+
+```
+
+*as illustrated in Table above, from variance inflation factors (VIF), which are all lower than 2.5 (a highly strict threshold to verify multicollinearity), we can say that our **model does not have an issue of multicollinearity.***
+
+#### *Econometric Equation*
+
+*The equation of* *our econometric model is as follows:*
+
+***`GII = b0 + b1PWIi + b2IDVi + b3MASi + b4UAIi + b5LTOi + b6IVRi + E`***
+
+-   *GII is dependent variable and denote Global Innovation Index*
+
+*The six indices of the HCD are used as explanatory variables in our study.*
+
+-   *PWI denotes power distance index (a scale of 0--100), and 0 indicates low power distance, while 100 indicates high power distance.*
+
+-   *IDV denotes a level of individualism (a scale of 0--100). A score close to 0 indicates collectivism, while that close to 100 indicates individualism.*
+
+-   *MAS denotes a level of masculinity (a scale of 0--100). A score close to 0 means a feministic society, while that close to 100 means a masculine society.*
+
+-   *UAI denotes uncertainty avoidance index (a scale of 0--100), and 0 indicates a society of a low level of uncertainty avoidance, while 100 indicates a society of a high level of uncertainty avoidance.*
+
+-   *LTO denotes long-term orientation (a scale of 0--100), and 0 indicates a (short-term) normative society, while 100 indicates a (long-term) pragmatic society.*
+
+-   *IVR denotes a level of indulgence (a scale of 0--100). A culture whose score is close to 0 restrains free gratification of natural human needs but a score of to 100 allows that.*
+
+-   *b0* *is a constant and E is an error term.*
+
+**In terms of econometric methodology, this study adopts OLS and robust estimations for a multiple regression analysis. In terms of values in skewness and kurtosis, our variables are ranged to be accepted as a normal distribution.**
+
+## Regression Analysis
+
+#### OLS
+
+```{r}
+# Load necessary libraries
+library(tidyverse)
+library(lmtest)
+
+# Run regression analysis
+ols_lm_model <- lm(GII_Score ~ PDI + IDV + MAS + UAI + LTO + IVR, data = data)
+
+# Summary of the model
+summary(ols_lm_model)
+summary(ols_lm_model)$r.squared
+par(mfrow=c(2,2))
+plot(ols_lm_model)
+```
+
+#### Robust
+
+```{r}
+
+library(MASS)
+
+model_robust <- rlm(GII_Score ~ PDI + IDV + MAS + UAI + LTO + IVR, data = data)
+
+# Summary of the model
+summary(model_robust)
+
+par(mfrow=c(2,2))
+plot(model_robust)
+```
+
+#### A cross-sectional regression output (OLS Vs Robust)
+
+| Models   | OLS                     | Robust              |
+|----------|-------------------------|---------------------|
+| Constant | 30.645351 \| (5.800357) | 28.4989 \| (5.5272) |
+| PDI      | -0.170673 \| (0.055863) | -0.1816 \| (0.0532) |
+| IDV      | 0.227630 \| (0.055861)  | 0.2607 \| (0.0532)  |
+| MAS      | -0.007565 \| (0.045881) | -0.0263 \| (0.0437) |
+| UAI      | -0.034203 \| (0.039926) | 0.0000 \| (0.0380)  |
+| LTO      | 0.195195 \| (0.032606)  | 0.1801 \| (0.0311)  |
+| IVR      | 0.032683 \| (0.033602)  | 0.0400 \| (0.0320)  |
+| *RSE*    | 7.234                   | 8.226               |
+| Obs.     | 97                      | 97                  |
+
+: *Note: Standard errors in parentheses;*
+
+Decided to go with OLS model over robust as OLS is a simple and widely used method for linear regression which assumes that the errors are normally distributed and the variance is constant across all levels of the predictor variables.
+
+### More Investigation 
+
+To clarify the general relation of cultural dimensions and innovation development and distinctiveness between developed and developing income groups, we ran regression analyses for the three types of models: all countries (97), developed countries (28) and developing countries (61).
+
+```{r}
+
+developed_countries_list <- c('Australia',
+'Austria',
+'Belgium',
+'Canada',
+'Denmark',
+'Finland',
+'France',
+'Chile',
+'Czech Republic',
+'Germany',
+'Greece',
+'Iceland',
+'Ireland',
+'Italy',
+'Japan',
+'Hong Kong',
+'Hungary',
+'Luxembourg',
+'Netherlands',
+'New Zealand',
+'Singapore',
+'Norway',
+'Portugal',
+'China',
+'Spain',
+'Sweden',
+'Switzerland',
+'Poland',
+'Romania',
+'Slovakia',
+'Slovenia',
+'Uruguay',
+'Republic of Korea',
+'United Kingdom',
+'United States of America')
+
+developing_countries_list <- c('Albania',
+'Algeria',
+'Angola',
+'Argentina',
+'Armenia',
+'Azerbaijan',
+'Bangladesh',
+'Belarus',
+'Bosnia and Herzegovina',
+'Brazil',
+'Bulgaria',
+'Burkina Faso',
+'Colombia',
+'Costa Rica',
+'Croatia',
+'Dominican Republic',
+'Ecuador',
+'Egypt',
+'El Salvador',
+'Estonia',
+'Ethiopia',
+'Georgia',
+'Ghana',
+'Guatemala',
+'Honduras',
+'India',
+'Indonesia',
+'Iran (Islamic Republic of)',
+'Iraq',
+'Israel',
+'Jamaica',
+'Jordan',
+'Kazakhstan',
+'Kenya',
+'Kuwait',
+'Latvia',
+'Lithuania',
+'Malaysia',
+'Malta',
+'Mexico',
+'Republic of Moldova',
+'Montenegro',
+'Morocco',
+'Mozambique',
+'Namibia',
+'Nepal',
+'Nigeria',
+'North Macedonia',
+'Pakistan',
+'Panama',
+'Paraguay',
+'Peru',
+'Philippines',
+'Qatar',
+'Russian Federation',
+'Saudi Arabia',
+'Senegal',
+'Serbia',
+'South Africa',
+'Sri Lanka',
+'Thailand',
+'Trinidad and Tobago',
+'Tunisia',
+'Turkiye',
+'Ukraine',
+'United Arab Emirates',
+'Viet Nam',
+'Zambia')
+```
+
+##### Developed Countries Regression
+
+```{r}
+# Create a new dataframe that only includes developed countries
+developed_countries_data <- data[data$Country %in% developed_countries_list,]
+
+# Fit an OLS model
+lm_model_developed <- lm(GII_Score ~ PDI + IDV + MAS + UAI + LTO + IVR, data = developed_countries_data)
+
+# Print the model summary
+summary(lm_model_developed)
+```
+
+##### Developing Countries Regression
+
+```{r}
+
+# Create a new dataframe that only includes developing countries
+developing_countries_data <- data[data$Country %in% developing_countries_list,]
+
+# Fit an OLS model
+lm_model_developing <- lm(GII_Score ~ PDI + IDV + MAS + UAI + LTO + IVR, data = developing_countries_data)
+
+# Print the model summary
+summary(lm_model_developing)
+```
+
+### *Results and Discussion*
+
+|                    | All Countries | Developed Countries | Developing Countries |
+|--------------------|---------------|---------------------|----------------------|
+| Adjusted R-Squared | 0.6179        | 0.6488              | 0.3754               |
+| P-Value            | \< 2.2e-16    | 1.831e-06           | 3.454e-06            |
+| RSE                | 8.226         | 5.445               | 6.736                |
+| Obs.               | 97            | 28                  | 61                   |
+
+The results of our analysis indicate that there is a clear link between cultural values and innovation as measured by the Global Innovation Index (GII). When examining all countries, developed nations, and developing nations, we found that cultural dimensions such as power distance and uncertainty avoidance had a strong positive correlation with innovation. However, this relationship was found to be stronger in developed nations compared to developing nations.
+
+Our OLS regression analysis showed that the model fit the data better for developed countries, with a higher R-squared value, lower p-value, and a lower residual standard error. This suggests that the relationship between cultural values and innovation may be more pronounced in developed nations.
+
+It's worth mentioning that, in our research, we didn't find any significant correlation between masculinity and innovation in any of the examined groups.
+
+In conclusion, this research highlights the importance of considering a country's level of development when analyzing the relationship between cultural values and innovation. The findings of this study can help policymakers and organizations understand how cultural values can impact a nation's ability to innovate and inform decisions related to innovation.
