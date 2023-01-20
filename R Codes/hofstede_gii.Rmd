@@ -1,22 +1,26 @@
+---
+output: posterdown::posterdown_html
+---
+
 # Cultural Impact on Innovation: A Comparative Analysis of Developed and Developing Nations
 
 ## Abstract
 
-This project aims to explore the impact of national culture on innovation by comparing developed and developing nations during the 2022 edition of the GII which tracks most recent global innovation trends against the background of an ongoing COVID-19 pandemic. Using Hofstede's 6D model of national culture, which includes dimensions such as power distance, individualism, masculinity, uncertainty avoidance, long-term orientation and indulgence, the study will investigate the relationship between cultural values and innovation as measured by the Global Innovation Index (GII). By examining the link between these cultural dimensions and the GII, the study will identify which dimensions are more or less related to a country's innovation performance. Additionally, the study will investigate whether the significance of cultural factors changes over time and whether the impact of culture on innovation is stronger in developed countries than in developing countries. The findings of this research will provide valuable insights into how cultural values can impact a nation's ability to innovate and inform policy decisions related to innovation.
+This project aims to explore the impact of national culture on innovation by comparing developed and developing nations during the pre- and post-crisis period 2019-2021. Using Hofstede's 6D model of national culture, which includes dimensions such as power distance, individualism, masculinity, uncertainty avoidance, long-term orientation and indulgence, the study will investigate the relationship between cultural values and innovation as measured by the Global Innovation Index (GII). By examining the link between these cultural dimensions and the GII, the study will identify which dimensions are more or less related to a country's innovation performance. Additionally, the study will investigate whether the significance of cultural factors changes over time and whether the impact of culture on innovation is stronger in developed countries than in developing countries. The findings of this research will provide valuable insights into how cultural values can impact a nation's ability to innovate and inform policy decisions related to innovation.
 
-> *Hofstede's 6D model* [^hofstede_gii-1] is a framework that compares cultural values across different nations. It includes six dimensions: power distance, individualism vs collectivism, masculinity vs femininity, uncertainty avoidance, long-term orientation, and indulgence vs restraint.
+> *Hofstede's 6D model* [^1] is a framework that compares cultural values across different nations. It includes six dimensions: power distance, individualism vs collectivism, masculinity vs femininity, uncertainty avoidance, long-term orientation, and indulgence vs restraint.
 
-[^hofstede_gii-1]: *. Source: <https://geerthofstede.com>*
+[^1]: *. Source: <https://geerthofstede.com>*
 
-> *The Global Innovation Index (GII)* [^hofstede_gii-2] is a measure of a country's innovation performance, it uses a combination of 81 indicators to measure a country's innovation ecosystem, including inputs, outputs and outcomes. It is widely used as a benchmarking tool to compare the innovation performance of countries and identifying strengths and weaknesses in a country's innovation ecosystem.
+> *The Global Innovation Index (GII)* [^2] is a measure of a country's innovation performance, it uses a combination of 81 indicators to measure a country's innovation ecosystem, including inputs, outputs and outcomes. It is widely used as a benchmarking tool to compare the innovation performance of countries and identifying strengths and weaknesses in a country's innovation ecosystem.
 
-[^hofstede_gii-2]: *. Source: <https://www.globalinnovationindex.org>*
+[^2]: *. Source: <https://www.globalinnovationindex.org>*
 
 ## Literature Review
 
 We intend to explore the links between national culture and innovation by examining the relationship between Hofstede's 6D model of national culture and the Global Innovation Index.
 
-## Define the research question
+## Research question
 
 What is the relationship between cultural values and innovation as measured by the Global Innovation Index (GII)?
 
@@ -30,7 +34,7 @@ The data for this study was collected from original sources:
 A brief summary of each of the six dimensions of national culture as defined by Hofstede::
 
 | Dimension                   |                                             Value                                             |
-|----------------------|:------------------------------------------------:|
+|-----------------------------|:---------------------------------------------------------------------------------------------:|
 | Power Distance (PDI)        |              The extent to which power and inequality are accepted in a society.              |
 | Individualism (IDV)         |                  The degree to which individuals are integrated into groups.                  |
 | Masculinity (MAS)           |           The degree to which traditional gender roles are reinforced in a society.           |
@@ -47,14 +51,23 @@ library(ggplot2) #data visualization
 
 #Import the dataset.
 data <- read.csv("data.csv")
-
 # Check for missing values
-sum(is.na(data)) # 0 missing value
+#sum(is.na(data)) # 0 missing value
+#data$Year <- as.Date(as.character(data$Year), format = "%Y")
 
+data
+
+```
+
+#### Summary Statistics
+
+```{r}
 #structure and summary of the dataset
 #str(data)
 summary(data)
 ```
+
+#### Data Distribution
 
 ```{r}
 
@@ -63,18 +76,25 @@ hofstede_dimensions <- data[,c("PDI", "IDV", "MAS", "UAI", "LTO", "IVR")]
 
 # Create boxplots
 boxplot(hofstede_dimensions)
+
+
+ggplot(data, aes(y = PDI, x = GII_Score, color = GII_Score, shape = Development_Level)) + 
+  geom_point()
+
+ggplot(data, aes(y = IDV, x = GII_Score, color = GII_Score, shape = Development_Level)) + 
+  geom_point()
+
+ggplot(data, aes(y = LTO, x = GII_Score, color = GII_Score, shape = Development_Level)) + 
+  geom_point()
+
 ```
 
 **The scores for Hofstede's cultural dimensions are measured on a scale from 0 to 100. Each dimension is assessed on a scale from 0 to 100, with higher scores indicating a stronger presence of the characteristic being measured.**
 
 ```{r}
-# Remove outliers
-```
-
-```{r}
 
 library(GGally)
-ggpairs(data[,c("PDI","IDV","MAS","UAI","LTO","IVR","GII_Score")],columns = c("PDI","IDV","MAS","UAI","LTO","IVR","GII_Score"),groupColumn = "Country")
+ggpairs(data[,c("PDI","IDV","MAS","UAI","LTO","IVR","GII_Score")],columns = c("PDI","IDV","MAS","UAI","LTO","IVR","GII_Score"),groupColumn = "Country", method="color")
 
 ```
 
@@ -131,7 +151,6 @@ lm_model <- lm(GII_Score ~ PDI + IDV + MAS + UAI + LTO + IVR, data = data)
 
 # calculate VIF
 vif(lm_model)
-
 ```
 
 *as illustrated in Table above, from variance inflation factors (VIF), which are all lower than 2.5 (a highly strict threshold to verify multicollinearity), we can say that our **model does not have an issue of multicollinearity.***
@@ -146,7 +165,7 @@ vif(lm_model)
 
 *The six indices of the HCD are used as explanatory variables in our study.*
 
--   *PWI denotes power distance index (a scale of 0--100), and 0 indicates low power distance, while 100 indicates high power distance.*
+-   *PDI denotes power distance index (a scale of 0--100), and 0 indicates low power distance, while 100 indicates high power distance.*
 
 -   *IDV denotes a level of individualism (a scale of 0--100). A score close to 0 indicates collectivism, while that close to 100 indicates individualism.*
 
@@ -161,6 +180,24 @@ vif(lm_model)
 -   *b0* *is a constant and E is an error term.*
 
 **In terms of econometric methodology, this study adopts OLS and robust estimations for a multiple regression analysis. In terms of values in skewness and kurtosis, our variables are ranged to be accepted as a normal distribution.**
+
+Hypothesis Development
+
+Hypothesis 1 (H1). The impact of cultural factors on innovation is stronger in developed countries than in developing countries.
+
+```{r}
+t.test(data$GII_Score, conf.level = 0.95)
+```
+
+```{r}
+ggplot(data, aes(x = Year, y = GII_Score)) + geom_line()
+
+```
+
+```{r}
+library(tseries)
+adf.test(data$GII_Score)
+```
 
 ## Regression Analysis
 
@@ -214,137 +251,39 @@ plot(model_robust)
 
 Decided to go with OLS model over robust as OLS is a simple and widely used method for linear regression which assumes that the errors are normally distributed and the variance is constant across all levels of the predictor variables.
 
-### More Investigation 
+### More Investigation
 
 To clarify the general relation of cultural dimensions and innovation development and distinctiveness between developed and developing income groups, we ran regression analyses for the three types of models: all countries (97), developed countries (28) and developing countries (61).
 
 ```{r}
+# Create a new dataframe that only includes developed countries
+developed_countries_data <- data[data$Development_Level == 'developed',]
 
-developed_countries_list <- c('Australia',
-'Austria',
-'Belgium',
-'Canada',
-'Denmark',
-'Finland',
-'France',
-'Chile',
-'Czech Republic',
-'Germany',
-'Greece',
-'Iceland',
-'Ireland',
-'Italy',
-'Japan',
-'Hong Kong',
-'Hungary',
-'Luxembourg',
-'Netherlands',
-'New Zealand',
-'Singapore',
-'Norway',
-'Portugal',
-'China',
-'Spain',
-'Sweden',
-'Switzerland',
-'Poland',
-'Romania',
-'Slovakia',
-'Slovenia',
-'Uruguay',
-'Republic of Korea',
-'United Kingdom',
-'United States of America')
-
-developing_countries_list <- c('Albania',
-'Algeria',
-'Angola',
-'Argentina',
-'Armenia',
-'Azerbaijan',
-'Bangladesh',
-'Belarus',
-'Bosnia and Herzegovina',
-'Brazil',
-'Bulgaria',
-'Burkina Faso',
-'Colombia',
-'Costa Rica',
-'Croatia',
-'Dominican Republic',
-'Ecuador',
-'Egypt',
-'El Salvador',
-'Estonia',
-'Ethiopia',
-'Georgia',
-'Ghana',
-'Guatemala',
-'Honduras',
-'India',
-'Indonesia',
-'Iran (Islamic Republic of)',
-'Iraq',
-'Israel',
-'Jamaica',
-'Jordan',
-'Kazakhstan',
-'Kenya',
-'Kuwait',
-'Latvia',
-'Lithuania',
-'Malaysia',
-'Malta',
-'Mexico',
-'Republic of Moldova',
-'Montenegro',
-'Morocco',
-'Mozambique',
-'Namibia',
-'Nepal',
-'Nigeria',
-'North Macedonia',
-'Pakistan',
-'Panama',
-'Paraguay',
-'Peru',
-'Philippines',
-'Qatar',
-'Russian Federation',
-'Saudi Arabia',
-'Senegal',
-'Serbia',
-'South Africa',
-'Sri Lanka',
-'Thailand',
-'Trinidad and Tobago',
-'Tunisia',
-'Turkiye',
-'Ukraine',
-'United Arab Emirates',
-'Viet Nam',
-'Zambia')
+# Create a new dataframe that only includes developing countries
+developing_countries_data <- data[data$Development_Level == 'developing',]
 ```
 
 ##### Developed Countries Regression
 
 ```{r}
-# Create a new dataframe that only includes developed countries
-developed_countries_data <- data[data$Country %in% developed_countries_list,]
+t.test(developed_countries_data$GII_Score, conf.level = 0.95)
+```
 
+```{r}
 # Fit an OLS model
 lm_model_developed <- lm(GII_Score ~ PDI + IDV + MAS + UAI + LTO + IVR, data = developed_countries_data)
 
 # Print the model summary
-summary(lm_model_developed)
+summary(developing_countries_data)
 ```
 
 ##### Developing Countries Regression
 
 ```{r}
+t.test(developing_countries_data$GII_Score, conf.level = 0.95)
+```
 
-# Create a new dataframe that only includes developing countries
-developing_countries_data <- data[data$Country %in% developing_countries_list,]
+```{r}
 
 # Fit an OLS model
 lm_model_developing <- lm(GII_Score ~ PDI + IDV + MAS + UAI + LTO + IVR, data = developing_countries_data)
