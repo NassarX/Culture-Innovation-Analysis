@@ -32,12 +32,13 @@ The analysis consists of several steps:
 - Model comparison
 - More Investigation (Developed Vs Developing Countries)
 - Results and Discussion
-
-The results of the OLS regression analysis suggest that there is a strong and statistically significant relationship between cultural values and innovation as measured by the GII for all countries, developed countries and developing countries, and the model fits the data better for developed countries than for all countries and developing countries.
+- Time Series Analysis
+- Conclusions
 
 ## Requirements
 
-- R version 4.0.2 or higher
+- R version v4.0.2 or higher
+- [posterdown v1.0](https://github.com/brentthorne/posterdown)
 - R packages: dplyr, ggplot2, lmtest, plm, quantreg, lmtest, sandwich, vif, ggparallel
 
 ## How to run

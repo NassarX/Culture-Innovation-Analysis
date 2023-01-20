@@ -1,105 +1,306 @@
-Country,PDI,IDV,MAS,UAI,LTO,IVR,GII_Score,GII_Rank
-Albania,90,20,80,70,61,15,24.4,84
-Algeria,80,35,35,70,26,32,16.7,115
-Angola,83,18,20,60,15,83,13.9,127
-Argentina,49,46,56,86,20,62,28.6,69
-Armenia,85,22,50,88,61,25,26.6,80
-Australia,38,90,61,51,21,71,47.1,25
-Austria,11,55,79,70,60,63,50.2,17
-Azerbaijan,85,22,50,88,61,22,21.4,93
-Bangladesh,80,20,55,60,47,20,19.7,102
-Belarus,95,25,20,95,81,15,27.5,77
-Belgium,65,75,54,94,82,57,46.9,26
-Bosnia and Herzegovina,90,22,48,87,70,44,28.5,70
-Brazil,69,38,49,76,44,59,32.5,54
-Bulgaria,70,30,40,85,69,16,39.5,35
-Burkina Faso,70,15,50,55,27,18,15.3,120
-Canada,39,80,52,48,36,68,50.8,15
-Chile,63,23,28,86,31,68,34.0,50
-China,80,20,66,30,87,24,55.3,11
-Colombia,67,13,64,80,13,83,29.2,63
-Costa Rica,35,15,21,86,0,0,28.7,68
-Croatia,73,33,40,80,58,33,35.6,42
-Czech Republic,57,58,57,74,70,29,42.8,30
-Denmark,18,74,16,23,35,70,55.9,10
-Dominican Republic,65,30,65,45,13,54,22.7,90
-Ecuador,78,8,63,67,0,0,20.3,98
-Egypt,70,25,45,80,7,4,22.7,89
-El Salvador,66,19,40,94,20,89,19.9,100
-Estonia,40,60,30,60,82,16,50.2,18
-Ethiopia,70,20,65,55,0,46,16.3,117
-Finland,33,63,26,59,38,57,56.9,9
-France,68,71,43,86,63,48,55.0,12
-Georgia,65,41,55,85,38,32,27.9,74
-Germany,35,67,66,65,83,40,57.2,8
-Ghana,80,15,40,65,4,72,20.8,95
-Greece,60,35,57,100,45,50,34.5,44
-Guatemala,95,6,37,98,0,0,17.8,110
-Honduras,80,20,40,50,0,0,17.3,113
-Hong Kong,68,25,57,29,61,17,51.8,14
-Hungary,46,80,88,82,58,31,39.8,34
-Iceland,30,60,10,50,28,67,49.5,20
-India,77,48,56,40,51,26,36.6,40
-Indonesia,78,14,46,48,62,38,27.9,75
-Iran (Islamic Republic of),58,41,43,59,14,40,32.9,53
-Iraq,95,30,70,85,25,17,11.9,131
-Ireland,28,70,68,35,24,65,48.5,23
-Israel,13,54,47,81,38,0,50.2,16
-Italy,50,76,70,75,61,30,46.1,28
-Jamaica,45,39,68,13,0,0,27.7,76
-Japan,54,46,95,92,88,42,53.6,13
-Jordan,70,30,45,65,16,43,27.4,78
-Kazakhstan,88,20,50,88,85,22,24.7,83
-Kenya,70,25,60,50,0,0,22.8,88
-Kuwait,90,25,40,80,0,0,29.2,62
-Latvia,44,70,9,63,69,13,36.5,41
-Lithuania,42,60,19,65,82,16,37.4,39
-Luxembourg,40,60,50,70,64,56,49.8,19
-Malaysia,100,26,50,36,41,57,38.7,36
-Malta,56,59,47,96,47,66,49.1,21
-Mexico,81,30,69,82,24,97,31.0,58
-Republic of Moldova,90,27,39,95,71,19,31.1,56
-Montenegro,88,24,48,90,75,20,30.3,60
-Morocco,70,46,53,68,14,25,28.8,67
-Mozambique,85,15,38,44,11,80,15.0,123
-Namibia,65,30,40,45,35,0,20.6,96
-Nepal,65,30,40,40,0,0,17.6,111
-Netherlands,38,80,14,53,67,68,58.0,5
-New Zealand,22,79,58,49,33,75,47.2,24
-Nigeria,80,30,60,55,13,84,16.9,114
-North Macedonia,90,22,45,87,62,35,28.8,66
-Norway,31,69,8,50,35,55,48.8,22
-Pakistan,55,14,50,70,50,0,23.0,87
-Panama,95,11,44,86,0,0,25.7,81
-Paraguay,70,12,40,85,20,56,22.6,91
-Peru,64,16,42,87,25,46,29.1,65
-Philippines,94,32,64,44,27,42,30.7,59
-Poland,68,60,64,93,38,29,37.5,38
-Portugal,63,27,31,99,28,33,42.1,32
-Qatar,93,25,55,80,0,0,32.9,52
-Romania,90,30,42,90,52,20,34.1,49
-Russian Federation,93,39,36,95,81,20,34.3,47
-Saudi Arabia,95,25,60,80,36,52,33.4,51
-Senegal,70,25,45,55,25,0,19.9,99
-Serbia,86,25,43,92,52,28,32.3,55
-Singapore,74,20,48,8,72,46,57.3,7
-Slovakia,100,52,100,51,77,28,34.3,46
-Slovenia,71,27,19,88,49,48,40.6,33
-South Africa,49,65,63,49,34,63,29.8,61
-Republic of Korea,60,18,39,85,100,29,57.8,6
-Spain,57,51,42,86,48,44,44.6,29
-Sri Lanka,80,35,10,45,45,0,24.2,85
-Sweden,31,71,5,29,53,78,61.6,3
-Switzerland,34,68,70,58,74,66,64.6,1
-United Republic of Tanzania,70,25,40,50,34,38,19.4,103
-Thailand,64,20,34,64,32,45,34.9,43
-Trinidad and Tobago,47,16,58,55,13,80,19.8,101
-Tunisia,70,40,40,75,0,0,27.9,73
-Turkiye,66,37,45,85,46,49,38.1,37
-Ukraine,92,25,27,95,86,14,31.0,57
-United Arab Emirates,90,25,50,80,0,0,42.1,31
-United Kingdom,35,89,66,35,51,69,59.7,4
-United States of America,40,91,62,46,26,68,61.8,2
-Uruguay,61,36,38,98,26,53,29.2,64
-Viet Nam,70,20,40,30,57,35,34.3,48
-Zambia,60,35,40,50,30,42,15.8,118
+Year,Country,PDI,IDV,MAS,UAI,LTO,IVR,GII_Score,Development_Level
+2019,Albania,90,20,80,70,61,15,30.3,developing
+2020,Albania,90,20,80,70,61,15,27.1,developing
+2021,Albania,90,20,80,70,61,15,28.0,developing
+2021,Algeria,80,35,35,70,26,32,19.9,developing
+2019,Algeria,80,35,35,70,26,32,24.0,developing
+2020,Algeria,80,35,35,70,26,32,19.5,developing
+2021,Angola,83,18,20,60,15,83,15.0,developing
+2020,Argentina,49,46,56,86,20,62,28.3,developing
+2019,Argentina,49,46,56,86,20,62,31.9,developing
+2021,Argentina,49,46,56,86,20,62,29.8,developing
+2021,Armenia,85,22,50,88,61,25,31.4,developing
+2020,Armenia,85,22,50,88,61,25,32.6,developing
+2019,Armenia,85,22,50,88,61,25,34.0,developing
+2021,Australia,38,90,61,51,21,71,48.3,developed
+2019,Australia,38,90,61,51,21,71,50.3,developed
+2020,Australia,38,90,61,51,21,71,48.4,developed
+2020,Austria,11,55,79,70,60,63,50.1,developed
+2021,Austria,11,55,79,70,60,63,50.9,developed
+2019,Austria,11,55,79,70,60,63,50.9,developed
+2020,Azerbaijan,85,22,50,88,61,22,27.2,developing
+2021,Azerbaijan,85,22,50,88,61,22,28.4,developing
+2019,Azerbaijan,85,22,50,88,61,22,30.2,developing
+2020,Bangladesh,80,20,55,60,47,20,20.4,developing
+2021,Bangladesh,80,20,55,60,47,20,20.2,developing
+2019,Bangladesh,80,20,55,60,47,20,23.3,developing
+2020,Belarus,95,25,20,95,81,15,31.3,developing
+2021,Belarus,95,25,20,95,81,15,32.6,developing
+2019,Belarus,95,25,20,95,81,15,32.1,developing
+2020,Belgium,65,75,54,94,82,57,49.1,developed
+2019,Belgium,65,75,54,94,82,57,50.2,developed
+2021,Belgium,65,75,54,94,82,57,49.2,developed
+2021,Bosnia and Herzegovina,90,22,48,87,70,44,29.6,developing
+2020,Bosnia and Herzegovina,90,22,48,87,70,44,29.0,developing
+2019,Bosnia and Herzegovina,90,22,48,87,70,44,31.4,developing
+2019,Brazil,69,38,49,76,44,59,33.8,developing
+2021,Brazil,69,38,49,76,44,59,34.2,developing
+2020,Brazil,69,38,49,76,44,59,31.9,developing
+2019,Bulgaria,70,30,40,85,69,16,40.3,developing
+2021,Bulgaria,70,30,40,85,69,16,42.4,developing
+2020,Bulgaria,70,30,40,85,69,16,40.0,developing
+2019,Burkina Faso,70,15,50,55,27,18,23.3,developing
+2021,Burkina Faso,70,15,50,55,27,18,20.5,developing
+2020,Burkina Faso,70,15,50,55,27,18,20.0,developing
+2021,Canada,39,80,52,48,36,68,53.1,developed
+2019,Canada,39,80,52,48,36,68,53.9,developed
+2020,Canada,39,80,52,48,36,68,52.3,developed
+2019,Chile,63,23,28,86,31,68,36.6,developed
+2021,Chile,63,23,28,86,31,68,35.1,developed
+2020,Chile,63,23,28,86,31,68,33.9,developed
+2021,China,80,20,66,30,87,24,54.8,developed
+2020,China,80,20,66,30,87,24,53.3,developed
+2019,China,80,20,66,30,87,24,54.8,developed
+2021,Colombia,67,13,64,80,13,83,31.7,developing
+2020,Colombia,67,13,64,80,13,83,30.8,developing
+2019,Colombia,67,13,64,80,13,83,33.0,developing
+2021,Costa Rica,35,15,21,86,0,0,34.5,developing
+2019,Costa Rica,35,15,21,86,0,0,36.1,developing
+2020,Costa Rica,35,15,21,86,0,0,33.5,developing
+2019,Croatia,73,33,40,80,58,33,37.8,developing
+2020,Croatia,73,33,40,80,58,33,37.3,developing
+2021,Croatia,73,33,40,80,58,33,37.3,developing
+2021,Czech Republic,57,58,57,74,70,29,49.0,developed
+2020,Czech Republic,57,58,57,74,70,29,48.3,developed
+2019,Czech Republic,57,58,57,74,70,29,49.4,developed
+2020,Denmark,18,74,16,23,35,70,57.5,developed
+2019,Denmark,18,74,16,23,35,70,58.4,developed
+2021,Denmark,18,74,16,23,35,70,57.3,developed
+2019,Dominican Republic,65,30,65,45,13,54,28.6,developing
+2021,Dominican Republic,65,30,65,45,13,54,25.1,developing
+2020,Dominican Republic,65,30,65,45,13,54,25.1,developing
+2020,Ecuador,78,8,63,67,0,0,24.1,developing
+2021,Ecuador,78,8,63,67,0,0,25.4,developing
+2019,Ecuador,78,8,63,67,0,0,26.6,developing
+2020,Egypt,70,25,45,80,7,4,24.2,developing
+2021,Egypt,70,25,45,80,7,4,25.1,developing
+2019,Egypt,70,25,45,80,7,4,27.5,developing
+2021,El Salvador,66,19,40,94,20,89,25.0,developing
+2019,El Salvador,66,19,40,94,20,89,24.9,developing
+2020,El Salvador,66,19,40,94,20,89,24.8,developing
+2021,Estonia,40,60,30,60,82,16,49.9,developing
+2020,Estonia,40,60,30,60,82,16,48.3,developing
+2019,Estonia,40,60,30,60,82,16,50.0,developing
+2021,Ethiopia,70,20,65,55,0,46,18.6,developing
+2020,Ethiopia,70,20,65,55,0,46,18.1,developing
+2019,Ethiopia,70,20,65,55,0,46,24.2,developing
+2020,Finland,33,63,26,59,38,57,57.0,developed
+2019,Finland,33,63,26,59,38,57,59.8,developed
+2021,Finland,33,63,26,59,38,57,58.4,developed
+2021,France,68,71,43,86,63,48,55.0,developed
+2019,France,68,71,43,86,63,48,54.2,developed
+2020,France,68,71,43,86,63,48,53.7,developed
+2020,Georgia,65,41,55,85,38,32,31.8,developing
+2019,Georgia,65,41,55,85,38,32,37.0,developing
+2021,Georgia,65,41,55,85,38,32,32.4,developing
+2020,Germany,35,67,66,65,83,40,56.5,developed
+2021,Germany,35,67,66,65,83,40,57.3,developed
+2019,Germany,35,67,66,65,83,40,58.2,developed
+2021,Ghana,80,15,40,65,4,72,22.3,developing
+2020,Ghana,80,15,40,65,4,72,22.3,developing
+2019,Ghana,80,15,40,65,4,72,25.3,developing
+2020,Greece,60,35,57,100,45,50,36.8,developed
+2019,Greece,60,35,57,100,45,50,38.9,developed
+2021,Greece,60,35,57,100,45,50,36.3,developed
+2019,Guatemala,95,6,37,98,0,0,25.1,developing
+2020,Guatemala,95,6,37,98,0,0,22.4,developing
+2021,Guatemala,95,6,37,98,0,0,24.1,developing
+2020,Honduras,80,20,40,50,0,0,23.0,developing
+2019,Honduras,80,20,40,50,0,0,25.5,developing
+2021,Honduras,80,20,40,50,0,0,22.8,developing
+2021,Hong Kong,68,25,57,29,61,17,53.7,developed
+2020,Hungary,46,80,88,82,58,31,41.5,developed
+2021,Hungary,46,80,88,82,58,31,42.7,developed
+2019,Hungary,46,80,88,82,58,31,44.5,developed
+2019,Iceland,30,60,10,50,28,67,51.5,developed
+2020,Iceland,30,60,10,50,28,67,49.2,developed
+2021,Iceland,30,60,10,50,28,67,51.8,developed
+2019,India,77,48,56,40,51,26,36.6,developing
+2020,India,77,48,56,40,51,26,35.6,developing
+2021,India,77,48,56,40,51,26,36.4,developing
+2020,Indonesia,78,14,46,48,62,38,26.5,developing
+2019,Indonesia,78,14,46,48,62,38,29.7,developing
+2021,Indonesia,78,14,46,48,62,38,27.1,developing
+2021,Iran (Islamic Republic of),58,41,43,59,14,40,32.9,developing
+2020,Iran (Islamic Republic of),58,41,43,59,14,40,30.9,developing
+2019,Iran (Islamic Republic of),58,41,43,59,14,40,34.4,developing
+2021,Ireland,28,70,68,35,24,65,50.7,developed
+2020,Ireland,28,70,68,35,24,65,53.0,developed
+2019,Ireland,28,70,68,35,24,65,56.1,developed
+2019,Israel,13,54,47,81,38,0,57.4,developing
+2020,Israel,13,54,47,81,38,0,53.5,developing
+2021,Israel,13,54,47,81,38,0,53.4,developing
+2020,Italy,50,76,70,75,61,30,45.7,developed
+2019,Italy,50,76,70,75,61,30,46.3,developed
+2021,Italy,50,76,70,75,61,30,45.7,developed
+2019,Jamaica,45,39,68,13,0,0,30.8,developing
+2020,Jamaica,45,39,68,13,0,0,29.1,developing
+2021,Jamaica,45,39,68,13,0,0,29.6,developing
+2020,Japan,54,46,95,92,88,42,52.7,developed
+2021,Japan,54,46,95,92,88,42,54.5,developed
+2019,Japan,54,46,95,92,88,42,54.7,developed
+2021,Jordan,70,30,45,65,16,43,28.3,developing
+2020,Jordan,70,30,45,65,16,43,27.8,developing
+2019,Jordan,70,30,45,65,16,43,29.6,developing
+2021,Kazakhstan,88,20,50,88,85,22,28.6,developing
+2020,Kazakhstan,88,20,50,88,85,22,28.6,developing
+2019,Kazakhstan,88,20,50,88,85,22,31.0,developing
+2020,Kenya,70,25,60,50,0,0,26.1,developing
+2019,Kenya,70,25,60,50,0,0,31.1,developing
+2021,Kenya,70,25,60,50,0,0,27.5,developing
+2021,Kuwait,90,25,40,80,0,0,29.9,developing
+2019,Kuwait,90,25,40,80,0,0,34.6,developing
+2020,Kuwait,90,25,40,80,0,0,28.4,developing
+2021,Latvia,44,70,9,63,69,13,40.0,developing
+2019,Latvia,44,70,9,63,69,13,43.2,developing
+2020,Latvia,44,70,9,63,69,13,41.1,developing
+2021,Lebanon,75,40,65,50,14,25,25.1,developing
+2020,Lebanon,75,40,65,50,14,25,26.0,developing
+2019,Lebanon,75,40,65,50,14,25,28.5,developing
+2019,Lithuania,42,60,19,65,82,16,41.5,developing
+2020,Lithuania,42,60,19,65,82,16,39.2,developing
+2021,Lithuania,42,60,19,65,82,16,39.9,developing
+2020,Luxembourg,40,60,50,70,64,56,50.8,developed
+2019,Luxembourg,40,60,50,70,64,56,53.5,developed
+2021,Luxembourg,40,60,50,70,64,56,49.0,developed
+2021,Malaysia,100,26,50,36,41,57,41.9,developing
+2020,Malaysia,100,26,50,36,41,57,42.4,developing
+2019,Malaysia,100,26,50,36,41,57,42.7,developing
+2020,Malta,56,59,47,96,47,66,46.4,developing
+2021,Malta,56,59,47,96,47,66,47.1,developing
+2019,Malta,56,59,47,96,47,66,49.0,developing
+2021,Mexico,81,30,69,82,24,97,34.5,developing
+2020,Mexico,81,30,69,82,24,97,33.6,developing
+2019,Mexico,81,30,69,82,24,97,36.1,developing
+2019,Montenegro,88,24,48,90,75,20,37.7,developing
+2020,Montenegro,88,24,48,90,75,20,35.4,developing
+2021,Montenegro,88,24,48,90,75,20,35.4,developing
+2019,Morocco,70,46,53,68,14,25,31.6,developing
+2020,Morocco,70,46,53,68,14,25,29.0,developing
+2021,Morocco,70,46,53,68,14,25,29.3,developing
+2019,Mozambique,85,15,38,44,11,80,22.9,developing
+2021,Mozambique,85,15,38,44,11,80,19.7,developing
+2020,Mozambique,85,15,38,44,11,80,18.7,developing
+2019,Namibia,65,30,40,45,35,0,25.9,developing
+2020,Namibia,65,30,40,45,35,0,22.5,developing
+2021,Namibia,65,30,40,45,35,0,24.3,developing
+2020,Nepal,65,30,40,40,0,0,24.4,developing
+2019,Nepal,65,30,40,40,0,0,24.9,developing
+2021,Nepal,65,30,40,40,0,0,22.5,developing
+2020,Netherlands,38,80,14,53,67,68,58.8,developed
+2019,Netherlands,38,80,14,53,67,68,61.4,developed
+2021,Netherlands,38,80,14,53,67,68,58.6,developed
+2020,New Zealand,22,79,58,49,33,75,47.0,developed
+2019,New Zealand,22,79,58,49,33,75,49.6,developed
+2021,New Zealand,22,79,58,49,33,75,47.5,developed
+2019,Nigeria,80,30,60,55,13,84,23.9,developing
+2021,Nigeria,80,30,60,55,13,84,20.1,developing
+2020,Nigeria,80,30,60,55,13,84,20.1,developing
+2021,North Macedonia,90,22,45,87,62,35,34.1,developing
+2020,North Macedonia,90,22,45,87,62,35,33.4,developing
+2019,North Macedonia,90,22,45,87,62,35,35.3,developing
+2020,Norway,31,69,8,50,35,55,49.3,developed
+2019,Norway,31,69,8,50,35,55,51.9,developed
+2021,Norway,31,69,8,50,35,55,50.4,developed
+2021,Pakistan,55,14,50,70,50,0,24.4,developing
+2019,Pakistan,55,14,50,70,50,0,25.4,developing
+2020,Pakistan,55,14,50,70,50,0,22.3,developing
+2019,Panama,95,11,44,86,0,0,31.5,developing
+2020,Panama,95,11,44,86,0,0,29.0,developing
+2021,Panama,95,11,44,86,0,0,28.0,developing
+2020,Paraguay,70,12,40,85,20,56,24.1,developing
+2019,Paraguay,70,12,40,85,20,56,27.1,developing
+2021,Paraguay,70,12,40,85,20,56,26.4,developing
+2020,Peru,64,16,42,87,25,46,28.8,developing
+2019,Peru,64,16,42,87,25,46,32.9,developing
+2021,Peru,64,16,42,87,25,46,31.2,developing
+2020,Philippines,94,32,64,44,27,42,35.2,developing
+2019,Philippines,94,32,64,44,27,42,36.2,developing
+2021,Philippines,94,32,64,44,27,42,35.3,developing
+2021,Poland,68,60,64,93,38,29,39.9,developed
+2020,Poland,68,60,64,93,38,29,40.0,developed
+2019,Poland,68,60,64,93,38,29,41.3,developed
+2021,Portugal,63,27,31,99,28,33,44.2,developed
+2020,Portugal,63,27,31,99,28,33,43.5,developed
+2019,Portugal,63,27,31,99,28,33,44.6,developed
+2020,Qatar,93,25,55,80,0,0,30.8,developing
+2021,Qatar,93,25,55,80,0,0,31.5,developing
+2019,Qatar,93,25,55,80,0,0,33.9,developing
+2019,Republic of Korea,60,18,39,85,100,29,56.6,developed
+2021,Republic of Korea,60,18,39,85,100,29,59.3,developed
+2020,Republic of Korea,60,18,39,85,100,29,56.1,developed
+2021,Republic of Moldova,90,27,39,95,71,19,32.3,developing
+2020,Republic of Moldova,90,27,39,95,71,19,33.0,developing
+2019,Republic of Moldova,90,27,39,95,71,19,35.5,developing
+2021,Romania,90,30,42,90,52,20,35.6,developed
+2019,Romania,90,30,42,90,52,20,36.8,developed
+2020,Romania,90,30,42,90,52,20,36.0,developed
+2019,Russian Federation,93,39,36,95,81,20,37.6,developing
+2020,Russian Federation,93,39,36,95,81,20,35.6,developing
+2021,Russian Federation,93,39,36,95,81,20,36.6,developing
+2020,Saudi Arabia,95,25,60,80,36,52,30.9,developing
+2021,Saudi Arabia,95,25,60,80,36,52,31.8,developing
+2019,Saudi Arabia,95,25,60,80,36,52,32.9,developing
+2021,Senegal,70,25,45,55,25,0,23.3,developing
+2020,Senegal,70,25,45,55,25,0,23.7,developing
+2019,Senegal,70,25,45,55,25,0,26.8,developing
+2020,Serbia,86,25,43,92,52,28,34.3,developing
+2019,Serbia,86,25,43,92,52,28,35.7,developing
+2021,Serbia,86,25,43,92,52,28,35.0,developing
+2020,Singapore,74,20,48,8,72,46,56.6,developed
+2019,Singapore,74,20,48,8,72,46,58.4,developed
+2021,Singapore,74,20,48,8,72,46,57.8,developed
+2020,Slovakia,100,52,100,51,77,28,39.7,developed
+2019,Slovakia,100,52,100,51,77,28,42.0,developed
+2021,Slovakia,100,52,100,51,77,28,40.2,developed
+2021,Slovenia,71,27,19,88,49,48,44.1,developed
+2019,Slovenia,71,27,19,88,49,48,45.3,developed
+2020,Slovenia,71,27,19,88,49,48,42.9,developed
+2019,South Africa,49,65,63,49,34,63,34.0,developing
+2021,South Africa,49,65,63,49,34,63,32.7,developing
+2020,South Africa,49,65,63,49,34,63,32.7,developing
+2021,Spain,57,51,42,86,48,44,45.4,developed
+2020,Spain,57,51,42,86,48,44,45.6,developed
+2019,Spain,57,51,42,86,48,44,47.9,developed
+2021,Sri Lanka,80,35,10,45,45,0,25.1,developing
+2019,Sri Lanka,80,35,10,45,45,0,28.5,developing
+2020,Sri Lanka,80,35,10,45,45,0,23.8,developing
+2021,Sweden,31,71,5,29,53,78,63.1,developed
+2019,Sweden,31,71,5,29,53,78,63.7,developed
+2020,Sweden,31,71,5,29,53,78,62.5,developed
+2021,Switzerland,34,68,70,58,74,66,65.5,developed
+2020,Switzerland,34,68,70,58,74,66,66.1,developed
+2019,Switzerland,34,68,70,58,74,66,67.2,developed
+2020,Thailand,64,20,34,64,32,45,36.7,developing
+2021,Thailand,64,20,34,64,32,45,37.2,developing
+2019,Thailand,64,20,34,64,32,45,38.6,developing
+2020,Trinidad and Tobago,47,16,58,55,13,80,24.1,developing
+2021,Trinidad and Tobago,47,16,58,55,13,80,24.8,developing
+2019,Trinidad and Tobago,47,16,58,55,13,80,28.1,developing
+2020,Tunisia,70,40,40,75,0,0,31.2,developing
+2021,Tunisia,70,40,40,75,0,0,30.7,developing
+2019,Tunisia,70,40,40,75,0,0,32.8,developing
+2020,Ukraine,92,25,27,95,86,14,36.3,developing
+2021,Ukraine,92,25,27,95,86,14,35.6,developing
+2019,Ukraine,92,25,27,95,86,14,37.4,developing
+2021,United Arab Emirates,90,25,50,80,0,0,43.0,developing
+2019,United Arab Emirates,90,25,50,80,0,0,42.2,developing
+2020,United Arab Emirates,90,25,50,80,0,0,41.8,developing
+2019,United Kingdom,35,89,66,35,51,69,61.3,developed
+2021,United Kingdom,35,89,66,35,51,69,59.8,developed
+2020,United Kingdom,35,89,66,35,51,69,59.8,developed
+2020,United Republic of Tanzania,70,25,40,50,34,38,25.6,developing
+2019,United Republic of Tanzania,70,25,40,50,34,38,26.6,developing
+2021,United Republic of Tanzania,70,25,40,50,34,38,25.6,developing
+2021,United States of America,40,91,62,46,26,68,61.3,developed
+2019,United States of America,40,91,62,46,26,68,61.7,developed
+2020,United States of America,40,91,62,46,26,68,60.6,developed
+2019,Uruguay,61,36,38,98,26,53,34.3,developed
+2021,Uruguay,61,36,38,98,26,53,32.2,developed
+2020,Uruguay,61,36,38,98,26,53,30.8,developed
+2020,Viet Nam,70,20,40,30,57,35,37.1,developing
+2021,Viet Nam,70,20,40,30,57,35,37.0,developing
+2019,Viet Nam,70,20,40,30,57,35,38.8,developing
+2019,Zambia,60,35,40,50,30,42,20.4,developing
+2020,Zambia,60,35,40,50,30,42,19.4,developing
+2021,Zambia,60,35,40,50,30,42,19.8,developing
