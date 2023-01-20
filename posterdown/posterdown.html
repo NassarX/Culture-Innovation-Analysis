@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="generator" content="pandoc" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<!--
+Font-awesome icons ie github or twitter
+-->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/brands.css" integrity="sha384-n9+6/aSqa9lBidZMRCQHTHKJscPq6NW4pCQBiMmHdUCvPN8ZOg2zJJTkC7WIezWv" crossorigin="anonymous">
+
+<!--
+Google fonts api stuff
+-->
+
+
+
+<title>Cultural Impact on Innovation, Analysis of Developed and Developing Nations.</title>
+
+
+
+
+
+
+<style>
+@page {
+size: 45in 38in;
+margin: 0;
+padding: 0;
+}
+body {
+margin: 0;
+font-size: 45px;
+width: 45in;
+height: 38in;
+padding: 0;
+text-align: justify;
+font-family: Palatino;
+}
+.poster_wrap {
+width: 45in;
+height: 38in;
+padding: 0cm;
+}
+.title_container {
+width: 45in;
+height: calc(38in * 0.15);
+overflow: hidden;
+background-color: #0b4545;
+border: 0 solid #0b4545;
+}
+.logo_left {
+float: left;
+width: 10%;
+height: 100%;
+background-color: #0b4545;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.logo_right {
+float: right;
+width: 10%;
+height: 100%;
+background-color: #0b4545;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.poster_title {
+text-align: center;
+position: relative;
+float: left;
+width: 80%;
+height: 100%;
+color: #FFFFFF;
+top: 50%;
+transform: translateY(-50%);
+-webkit-transform: translateY(-50%);
+}
+#title {
+font-family: Palatino;
+}
+/* unvisited link */
+a:link {
+color: #cc0000;
+}
+.mybreak {
+  break-before: column;
+}
+/* visited link */
+a:visited {
+color: #cc0000;
+}
+
+/* mouse over link */
+a:hover {
+color: #cc0000;
+}
+
+/* selected link */
+a:active {
+color: #cc0000;
+}
+.poster_body {
+-webkit-column-count: 3; /* Chrome, Safari, Opera */
+-moz-column-count: 3; /* Firefox */
+column-count: 3;
+-webkit-column-fill: auto;
+-moz-column-fill: auto;
+column-fill: auto;
+-webkit-column-rule-width: 1mm;
+-moz-column-rule-width: 1mm;
+column-rule-width: 1mm;
+-webkit-column-rule-style: dashed;
+-moz-column-rule-style: dashed;
+column-rule-style: dashed;
+-webkit-column-rule-color: #0b4545;
+-moz-column-rule-color: #0b4545;
+column-rule-color: #0b4545;
+column-gap: 1em;
+padding-left: 0.5em;
+padding-right: 0.5em;
+height: 100%;
+color: #000000
+background-color: #ffffff;
+}
+.poster_title h1 {
+font-size: 75pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+.poster_body_wrap{
+width: calc(45in + 0 + 0);
+height: calc(38in * 0.83);
+padding-top: calc(38in * 0.005);
+padding-bottom: calc(38in * 0.01);
+background-color: #ffffff;
+}
+.poster_title h3 {
+color: #ffffff;
+font-size: 50pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+.poster_title h3 > sup {
+  font-size: 35pt;
+  margin-left: 0.02em;
+}
+.poster_title h5 {
+color: #FFFFFF;
+font-size: 35pt;
+margin: 0;
+border: 0;
+font-weight: normal;
+}
+img {
+margin-top: 2cm;
+margin-bottom: 0;
+}
+.section {
+  padding: 0.2em;
+}
+.poster_body h1 {
+text-align: center;
+color: #FFFFFF;
+font-size: 65pt;
+border: 2mm solid #0b4545;
+background-color: #0b4545;
+border-radius: 4mm 0mm;
+margin-top: 2mm;
+margin-bottom: 2mm;
+font-weight: normal;
+}
+.poster_body h2 {
+color: #000000;
+font-size: 40pt;
+padding-left: 4mm;
+font-weight: normal;
+}
+.span {
+width: 200%;
+}
+/* center align leaflet map,
+from https://stackoverflow.com/questions/52112119/center-leaflet-in-a-rmarkdown-document */
+.html-widget {
+margin: auto;
+position: sticky;
+margin-top: 2cm;
+margin-bottom: 2cm;
+}
+.leaflet.html-widget.html-widget-static-bound.leaflet-container.leaflet-touch.leaflet-fade-anim.leaflet-grab.leaflet-touch-drag.leaflet-touch-zoom {
+position: sticky;
+width: 100%;
+}
+pre.sourceCode.r {
+background-color: #dddddd40;
+border-radius: 4mm;
+padding: 4mm;
+width: 75%;
+/* align-items: center; */
+margin: auto;
+padding-left: 2cm;
+}
+code.sourceCode.r{
+background-color: transparent;
+font-size: 20pt;
+border-radius: 2mm;
+}
+.caption {
+font-size: 25pt;
+}
+.table caption {
+font-size: 25pt;
+padding-bottom: 3mm;
+
+}
+code {
+font-size: 1em;
+font-family: monospace;
+background-color: #00808024;
+color: #0b4545;
+padding: 1.2mm;
+border-radius: 2mm;
+}
+.poster_title code {
+font-size: 1em;
+}
+table {
+font-size: 40px;
+margin: auto;
+border-top: 3px solid #666;
+border-bottom: 3px solid #666;
+}
+table thead th {
+border-bottom: 3px solid #ddd;
+}
+td {
+padding: 8px;
+}
+th {
+padding: 15px;
+}
+caption {
+margin-bottom: 10px;
+}
+.poster_body p {
+margin-right: 4mm;
+margin-left: 4mm;
+margin-top: 6mm;
+margin-bottom: 10mm;
+}
+.poster_body ol {
+margin-right: 4mm;
+margin-left: 4mm;
+}
+#ul {
+margin-right: 4mm;
+margin-left: 4mm;
+}
+.references p {
+font-size: 20pt;
+}
+.orcid img {
+  width: 1em;
+}
+</style>
+</head>
+<body>
+
+
+<div class="poster_wrap">
+<div class="title_container">
+<!-- Left Logo  -->
+<div class="logo_left">
+</div>
+<!-- Poster Title -->
+<div class= "poster_title">
+<h1 id="title">Cultural Impact on Innovation, Analysis of Developed and Developing Nations.</h1>
+<h3 id="author">Mahmoud Ahmed (20221397)<sup></sup></h3><br>
+<h5 id="affiliation"><sup>1</sup> NOVA IMS - Information Management School | NOVA IMS</h5>
+</div>
+<!-- Right Logo  -->
+<div class="logo_right">
+<img src=https://urbandatalab.pt/images/partners/nova_ims.png style="width: 80%">
+</div>
+</div>
+
+<div class='poster_body_wrap'>
+<div class='poster_body'>
+<div id="introduction" class="section level1">
+<h1>Introduction</h1>
+<blockquote>
+<p>This project examines the relationship between national culture and innovation using <em>Hofstede’s 6D model</em> <a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> and the Global Innovation Index (GII) <a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> for developed and developing nations during the 2019-2021 period. The study aims to identify the impact of cultural values on innovation performance and how it changes over time. The findings will provide insights for innovation policy decisions.</p>
+</blockquote>
+<div id="objectives" class="section level2">
+<h2>Objectives</h2>
+<p>Explore the links between national culture and innovation by examining the relationship between Hofstede’s 6D model of national culture and the Global Innovation Index.</p>
+</div>
+<div id="data" class="section level2">
+<h2>Data</h2>
+<p>The data for this study was collected from original sources:</p>
+<p>1. <a href="https://www.geert-hofstede.com/countries.html">Geert Hofstede’s website</a></p>
+<p>2. <a href="https://www.wipo.int/gii/en/">World Intellectual Property Organization (WIPO)</a></p>
+<p>A brief summary of each of the six dimensions of national culture as defined by Hofstede::</p>
+<table>
+<colgroup>
+<col width="23%" />
+<col width="76%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Dimension</th>
+<th align="center">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Power Distance (PDI)</td>
+<td align="center">The extent to which power and inequality are accepted in a society.</td>
+</tr>
+<tr class="even">
+<td>Individualism (IDV)</td>
+<td align="center">The degree to which individuals are integrated into groups.</td>
+</tr>
+<tr class="odd">
+<td>Masculinity (MAS)</td>
+<td align="center">The degree to which traditional gender roles are reinforced in a society.</td>
+</tr>
+<tr class="even">
+<td>Uncertainty Avoidance (UAI)</td>
+<td align="center">The extent to which a society is comfortable with uncertainty and ambiguity.</td>
+</tr>
+<tr class="odd">
+<td>Long-term Orientation (LTO)</td>
+<td align="center">The extent to which a society values long-term goals and traditional values.</td>
+</tr>
+<tr class="even">
+<td>Indulgence (IVR)</td>
+<td align="center">The degree to which people in a society are allowed to indulge in their impulses and desires.</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="methodology" class="section level1">
+<h1>Methodology</h1>
+<p>Data was collected on Hofstede’s 6D model scores and Global Innovation Index scores for various countries. The countries were divided into developed and developing nations.</p>
+<p>Pearson’s correlation matrix and linear regression analysis were performed to examine the relationship between cultural values and innovation as measured by the GII.</p>
+<p>OLS and robust regression models were applied and compared to determine the best fitting model.</p>
+<p>Results were analyzed and discussed in relation to the hypotheses presented.</p>
+<p>The study provided valuable insights on the impact of national culture on innovation, specifically highlighting the significance of cultural values on innovation performance.</p>
+<p><img src="images/boxplots.png" width="637" alt="Data Distributions" /> <img src="images/000010.png" width="640" alt="Data Correlations" /> <img src="images/pdi.png" width="640" alt="Power Distance" /><img src="images/idv.png" width="640" alt="Individualism" /></p>
+</div>
+<div id="results" class="section level1">
+<h1>Results</h1>
+<div id="cross-sectional" class="section level2">
+<h2>Cross Sectional</h2>
+<div id="a-cross-sectional-regression-output-ols-vs-robust" class="section level5">
+<h5>A cross-sectional regression output (OLS Vs Robust)</h5>
+<table>
+<caption><em>Note: Standard errors in parentheses;</em></caption>
+<thead>
+<tr class="header">
+<th>Models</th>
+<th>OLS</th>
+<th>Robust</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Constant</td>
+<td>32.57091 | (2.96095)</td>
+<td>30.7208 | (2.9157)</td>
+</tr>
+<tr class="even">
+<td>PDI</td>
+<td>-0.14911 | (0.02833)</td>
+<td>-0.1531 | (0.0279)</td>
+</tr>
+<tr class="odd">
+<td>IDV</td>
+<td>0.21898 | (0.02824)</td>
+<td>0.2494 | (0.0278)</td>
+</tr>
+<tr class="even">
+<td>MAS</td>
+<td>-0.01344 | (0.02335)</td>
+<td>-0.0280 | (0.0230)</td>
+</tr>
+<tr class="odd">
+<td>UAI</td>
+<td>-0.01920 | (0.02043)</td>
+<td>0.0108 | (0.0201)</td>
+</tr>
+<tr class="even">
+<td>LTO</td>
+<td>0.17260 | (0.01649)</td>
+<td>0.1526 | (0.0162)</td>
+</tr>
+<tr class="odd">
+<td>IVR</td>
+<td>0.03070 | (0.01723)</td>
+<td>0.0327 | (0.0170)</td>
+</tr>
+<tr class="even">
+<td><em>RSE</em></td>
+<td>7.156</td>
+<td>6.483</td>
+</tr>
+<tr class="odd">
+<td>Obs.</td>
+<td>298</td>
+<td>298</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="discussion" class="section level3">
+<h3>Discussion</h3>
+<table style="width:100%;">
+<caption>The results of our analysis indicate that there is a clear link between cultural values and innovation as measured by the Global Innovation Index (GII). When examining all countries, developed nations, and developing nations, we found that cultural dimensions such as power distance and uncertainty avoidance had a strong positive correlation with innovation. However, this relationship was found to be stronger in developed nations compared to developing nations.</caption>
+<colgroup>
+<col width="25%" />
+<col width="19%" />
+<col width="26%" />
+<col width="28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th></th>
+<th>All Countries</th>
+<th>Developed Countries</th>
+<th>Developing Countries</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Adjusted R-Squared</td>
+<td>0.6453</td>
+<td>0.7363</td>
+<td>0.4317</td>
+</tr>
+<tr class="even">
+<td>P-Value</td>
+<td>&lt; 2.2e-16</td>
+<td>&lt; 2.2e-16</td>
+<td>&lt; 2.2e-16</td>
+</tr>
+<tr class="odd">
+<td>RSE</td>
+<td>7.156</td>
+<td>0.7198</td>
+<td>5.559</td>
+</tr>
+<tr class="even">
+<td>F-statistic</td>
+<td>93.18</td>
+<td>44.67</td>
+<td>26.45</td>
+</tr>
+<tr class="odd">
+<td>Obs.</td>
+<td>298</td>
+<td>96</td>
+<td>195</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="time-series-analysis" class="section level2">
+<h2>Time Series Analysis</h2>
+<ul>
+<li>Series: data_ts ARIMA(0,1,0) sigma^2 = 56.44: log likelihood = -120.24 AIC=242.48 AICc=242.61 BIC=244.04</li>
+</ul>
+<p><img src="images/acf.png" width="485" alt="ACF" /> <img src="images/pact.png" width="502" height="300" alt="Partial ACF" /></p>
+<ul>
+<li>Box-Ljung test data: fit_arima$residuals X-squared = 0.0037329, df = 1, p-value = 0.9513</li>
+</ul>
+<div id="discussion-1" class="section level3">
+<h3>Discussion</h3>
+<p>Firstly, Despite the time variation, the correlations and cultural dimension values remained the same, and even the pandemic event 2020 could not change this pattern.</p>
+<p>The output above shows that the X-squared value is 0.0037329 and the p-value is 0.9513. Since the p-value is greater than 0.05, we fail to reject the null hypothesis that the residuals are white noise. This suggests that the residuals of the ARIMA model are not correlated and are well-behaved, and that the model is a good fit for the data.</p>
+</div>
+</div>
+</div>
+<div id="conclusions" class="section level1">
+<h1>Conclusions</h1>
+<p>This study investigated the impact of Hofstede cultural dimensions on the Global Innovation Index scores in three different years (2019, 2020 and 2021) to compare the impacts during pre- and post-crisis (COVID-19) period. The results showed that culture has an important component on innovative output of a country, however, it does not have a serious impact on the GII results of developing countries. However, the study has limitations such as a small sample size due to constrained datasets of Hofstede’s cultural dimensions and GII overtime, which can cause a sample bias.</p>
+</div>
+<div class="footnotes footnotes-end-of-document">
+<hr />
+<ol>
+<li id="fn1"><p><em>. Source: <a href="https://geerthofstede.com" class="uri">https://geerthofstede.com</a></em><a href="#fnref1" class="footnote-back">↩︎</a></p></li>
+<li id="fn2"><p><em>. Source: <a href="https://www.globalinnovationindex.org" class="uri">https://www.globalinnovationindex.org</a></em><a href="#fnref2" class="footnote-back">↩︎</a></p></li>
+</ol>
+</div>
+</div>
+</div>
+
+</div>
+
+
+
+</body>
+</html>
